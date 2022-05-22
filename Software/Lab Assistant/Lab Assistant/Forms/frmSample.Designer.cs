@@ -1,6 +1,6 @@
-﻿namespace Lab_Assistant
+﻿namespace Lab_Assistant.Forms
 {
-    partial class Form1
+    partial class frmSample
     {
         /// <summary>
         /// Required designer variable.
@@ -28,13 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSample));
+            this.SuspendLayout();
+            // 
+            // frmSample
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "frmSample";
+            this.Text = "frmSample";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.ResumeLayout(false);
+
         }
 
         #endregion
     }
 }
-

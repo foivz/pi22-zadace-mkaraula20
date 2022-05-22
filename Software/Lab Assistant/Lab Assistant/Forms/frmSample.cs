@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Lab_Assistant
+namespace Lab_Assistant.Forms
 {
-    public partial class Form1 : Form
+    public partial class frmSample : Form
     {
-        public Form1()
+        public frmSample()
         {
             InitializeComponent();
         }
