@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32421.90
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab Assistant", "Lab Assistant\Lab Assistant.csproj", "{F153518A-043A-40FC-B183-9B91FD58A81C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F153518A-043A-40FC-B183-9B91FD58A81C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F153518A-043A-40FC-B183-9B91FD58A81C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F153518A-043A-40FC-B183-9B91FD58A81C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F153518A-043A-40FC-B183-9B91FD58A81C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5A674424-E6FC-4BBD-BFE1-1E750D97F38E}
+	EndGlobalSection
+EndGlobal
