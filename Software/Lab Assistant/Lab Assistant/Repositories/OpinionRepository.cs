@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Lab_Assistant.Repositories
 {
-    internal class OpinionRepository
+    public class OpinionRepository
     {
-
+        
     }
 }

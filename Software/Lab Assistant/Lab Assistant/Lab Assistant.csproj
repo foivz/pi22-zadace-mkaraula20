@@ -46,7 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DBLayer\obj\Debug\.NETFramework,Version=v4.8.AssemblyAttributes.cs" />
     <Compile Include="Forms\FrmPopisUzoraka.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -59,9 +58,17 @@
     <Compile Include="Forms\FrmSample.Designer.cs">
       <DependentUpon>FrmSample.cs</DependentUpon>
     </Compile>
+    <Compile Include="mkaraula20_DBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>mkaraula20_DBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Patient.cs" />
+    <Compile Include="Models\Sample.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\OpinionRepository.cs" />
+    <Compile Include="Repositories\SampleRepository.cs" />
     <EmbeddedResource Include="Forms\FrmPopisUzoraka.resx">
       <DependentUpon>FrmPopisUzoraka.cs</DependentUpon>
     </EmbeddedResource>
@@ -77,9 +84,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="DBLayer\obj\Debug\DBLayer.csproj.AssemblyReference.cache" />
-    <None Include="DBLayer\obj\Debug\DBLayer.csproj.CoreCompileInputs.cache" />
-    <None Include="DBLayer\obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="mkaraula20_DBDataSet.xsc">
+      <DependentUpon>mkaraula20_DBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="mkaraula20_DBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>mkaraula20_DBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="mkaraula20_DBDataSet.xss">
+      <DependentUpon>mkaraula20_DBDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -93,18 +108,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="DBLayer\bin\Release\" />
-    <Folder Include="DBLayer\obj\Debug\TempPE\" />
-    <Folder Include="Models\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="DBLayer\bin\Debug\DBLayer.dll" />
-    <Content Include="DBLayer\bin\Debug\DBLayer.pdb" />
-    <Content Include="DBLayer\obj\Debug\DBLayer.csproj.FileListAbsolute.txt" />
-    <Content Include="DBLayer\obj\Debug\DBLayer.dll" />
-    <Content Include="DBLayer\obj\Debug\DBLayer.pdb" />
-    <Content Include="Dlls\DBLayer.dll" />
+    <Content Include="DBLayer\DBLayer.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
