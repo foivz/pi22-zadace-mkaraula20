@@ -1,4 +1,5 @@
 ﻿using Lab_Assistant.Forms;
+using Lab_Assistant.Repositories;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,7 +22,18 @@ namespace Lab_Assistant
 
         private void FrmPopisUzoraka_Load(object sender, EventArgs e)
         {
-            
+            ShowSamples();
+        }
+
+        private void ShowSamples()
+        {
+            var samples = SampleRepository.GetSamples();
+            dgvSamples.DataSource = samples;
+
+            dgvSamples.Columns["SampleId"].DisplayIndex = 0;
+            dgvSamples.Columns["Date"].DisplayIndex = 1;
+            dgvSamples.Columns["Status"].DisplayIndex = 2;
+            dgvSamples.Columns["Opinion"].DisplayIndex = 3;
         }
 
         private void btnOpenSamples_Click(object sender, EventArgs e)
