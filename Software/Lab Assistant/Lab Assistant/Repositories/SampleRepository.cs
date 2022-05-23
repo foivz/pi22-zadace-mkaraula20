@@ -14,7 +14,7 @@ namespace Lab_Assistant.Repositories
         public static Sample GetSample(int id)
         {
             Sample sample = null;
-            string sql = $"SELECT * FROM Sample WHERE Id = {id}";
+            string sql = $"SELECT * FROM Sample WHERE SampleId = {id}";
             DB.OpenConnection();
 
             var reader = DB.GetDataReader(sql);

@@ -27,7 +27,8 @@ namespace Lab_Assistant.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=31.147.204.119\\PISERVER,1433;Initial Catalog=mkaraula20_DB;Persist Se" +
-            "curity Info=True;User ID=mkaraula20;Password=Rv0w!:eA")]
+            "curity Info=True;User ID=mkaraula20;Password=Rv0w!:eA;TrustServerCertificate=Tru" +
+            "e")]
         public string mkaraula20_DBConnectionString {
             get {
                 return ((string)(this["mkaraula20_DBConnectionString"]));

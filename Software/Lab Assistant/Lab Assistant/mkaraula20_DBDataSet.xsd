@@ -2,7 +2,7 @@
 <xs:schema id="mkaraula20_DBDataSet" targetNamespace="http://tempuri.org/mkaraula20_DBDataSet.xsd" xmlns:mstns="http://tempuri.org/mkaraula20_DBDataSet.xsd" xmlns="http://tempuri.org/mkaraula20_DBDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" GeneratorFunctionsComponentClassName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" UserFunctionsComponentName="QueriesTableAdapter" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="mkaraula20_DBConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="mkaraula20_DBConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Lab_Assistant.Properties.Settings.GlobalReference.Default.mkaraula20_DBConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
@@ -214,25 +214,35 @@ SELECT WorkWarrantId, Date, Analysis, CreatedBy FROM [Work Warrant] WHERE (WorkW
             <Sources />
           </TableAdapter>
         </Tables>
-        <Sources />
+        <Sources>
+          <DbSource ConnectionRef="mkaraula20_DBConnectionString (Settings)" DbObjectName="mkaraula20_DB.dbo.Sample" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="ScalarQuery" MethodsParameterType="CLR" Modifier="Public" Name="ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="ScalarQuery">
+            <SelectCommand>
+              <DbCommand CommandType="Text" ModifiedByUser="true">
+                <CommandText>SELECT        SampleId, Date, Status, Results, Opinion
+FROM            Sample</CommandText>
+                <Parameters />
+              </DbCommand>
+            </SelectCommand>
+          </DbSource>
+        </Sources>
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="mkaraula20_DBDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_UserDSName="mkaraula20_DBDataSet" msprop:Generator_DataSetName="mkaraula20_DBDataSet">
+  <xs:element name="mkaraula20_DBDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="mkaraula20_DBDataSet" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="mkaraula20_DBDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Patient" msprop:Generator_RowEvHandlerName="PatientRowChangeEventHandler" msprop:Generator_RowDeletedName="PatientRowDeleted" msprop:Generator_RowDeletingName="PatientRowDeleting" msprop:Generator_RowEvArgName="PatientRowChangeEvent" msprop:Generator_TablePropName="Patient" msprop:Generator_RowChangedName="PatientRowChanged" msprop:Generator_RowChangingName="PatientRowChanging" msprop:Generator_TableClassName="PatientDataTable" msprop:Generator_RowClassName="PatientRow" msprop:Generator_TableVarName="tablePatient" msprop:Generator_UserTableName="Patient">
+        <xs:element name="Patient" msprop:Generator_RowClassName="PatientRow" msprop:Generator_RowEvHandlerName="PatientRowChangeEventHandler" msprop:Generator_RowDeletedName="PatientRowDeleted" msprop:Generator_RowDeletingName="PatientRowDeleting" msprop:Generator_RowEvArgName="PatientRowChangeEvent" msprop:Generator_TablePropName="Patient" msprop:Generator_RowChangedName="PatientRowChanged" msprop:Generator_UserTableName="Patient" msprop:Generator_RowChangingName="PatientRowChanging" msprop:Generator_TableClassName="PatientDataTable" msprop:Generator_TableVarName="tablePatient">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="PatientId" msprop:Generator_ColumnPropNameInRow="PatientId" msprop:Generator_ColumnPropNameInTable="PatientIdColumn" msprop:Generator_ColumnVarNameInTable="columnPatientId" msprop:Generator_UserColumnName="PatientId" type="xs:int" />
-              <xs:element name="Name" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_UserColumnName="Name" minOccurs="0">
+              <xs:element name="PatientId" msprop:Generator_UserColumnName="PatientId" msprop:Generator_ColumnPropNameInTable="PatientIdColumn" msprop:Generator_ColumnPropNameInRow="PatientId" msprop:Generator_ColumnVarNameInTable="columnPatientId" type="xs:int" />
+              <xs:element name="Name" msprop:Generator_UserColumnName="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnVarNameInTable="columnName" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="20" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Surname" msprop:Generator_ColumnPropNameInRow="Surname" msprop:Generator_ColumnPropNameInTable="SurnameColumn" msprop:Generator_ColumnVarNameInTable="columnSurname" msprop:Generator_UserColumnName="Surname" minOccurs="0">
+              <xs:element name="Surname" msprop:Generator_UserColumnName="Surname" msprop:Generator_ColumnPropNameInTable="SurnameColumn" msprop:Generator_ColumnPropNameInRow="Surname" msprop:Generator_ColumnVarNameInTable="columnSurname" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="20" />
@@ -242,50 +252,50 @@ SELECT WorkWarrantId, Date, Analysis, CreatedBy FROM [Work Warrant] WHERE (WorkW
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Sample" msprop:Generator_RowEvHandlerName="SampleRowChangeEventHandler" msprop:Generator_RowDeletedName="SampleRowDeleted" msprop:Generator_RowDeletingName="SampleRowDeleting" msprop:Generator_RowEvArgName="SampleRowChangeEvent" msprop:Generator_TablePropName="Sample" msprop:Generator_RowChangedName="SampleRowChanged" msprop:Generator_RowChangingName="SampleRowChanging" msprop:Generator_TableClassName="SampleDataTable" msprop:Generator_RowClassName="SampleRow" msprop:Generator_TableVarName="tableSample" msprop:Generator_UserTableName="Sample">
+        <xs:element name="Sample" msprop:Generator_RowClassName="SampleRow" msprop:Generator_RowEvHandlerName="SampleRowChangeEventHandler" msprop:Generator_RowDeletedName="SampleRowDeleted" msprop:Generator_RowDeletingName="SampleRowDeleting" msprop:Generator_RowEvArgName="SampleRowChangeEvent" msprop:Generator_TablePropName="Sample" msprop:Generator_RowChangedName="SampleRowChanged" msprop:Generator_UserTableName="Sample" msprop:Generator_RowChangingName="SampleRowChanging" msprop:Generator_TableClassName="SampleDataTable" msprop:Generator_TableVarName="tableSample">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="SampleId" msprop:Generator_ColumnPropNameInRow="SampleId" msprop:Generator_ColumnPropNameInTable="SampleIdColumn" msprop:Generator_ColumnVarNameInTable="columnSampleId" msprop:Generator_UserColumnName="SampleId" type="xs:int" />
-              <xs:element name="Date" msprop:Generator_ColumnPropNameInRow="Date" msprop:Generator_ColumnPropNameInTable="DateColumn" msprop:Generator_ColumnVarNameInTable="columnDate" msprop:Generator_UserColumnName="Date" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="Status" msprop:Generator_ColumnPropNameInRow="Status" msprop:Generator_ColumnPropNameInTable="StatusColumn" msprop:Generator_ColumnVarNameInTable="columnStatus" msprop:Generator_UserColumnName="Status" minOccurs="0">
+              <xs:element name="SampleId" msprop:Generator_UserColumnName="SampleId" msprop:Generator_ColumnPropNameInTable="SampleIdColumn" msprop:Generator_ColumnPropNameInRow="SampleId" msprop:Generator_ColumnVarNameInTable="columnSampleId" type="xs:int" />
+              <xs:element name="Date" msprop:Generator_UserColumnName="Date" msprop:Generator_ColumnPropNameInTable="DateColumn" msprop:Generator_ColumnPropNameInRow="Date" msprop:Generator_ColumnVarNameInTable="columnDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Status" msprop:Generator_UserColumnName="Status" msprop:Generator_ColumnPropNameInTable="StatusColumn" msprop:Generator_ColumnPropNameInRow="Status" msprop:Generator_ColumnVarNameInTable="columnStatus" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Results" msprop:Generator_ColumnPropNameInRow="Results" msprop:Generator_ColumnPropNameInTable="ResultsColumn" msprop:Generator_ColumnVarNameInTable="columnResults" msprop:Generator_UserColumnName="Results" minOccurs="0">
+              <xs:element name="Results" msprop:Generator_UserColumnName="Results" msprop:Generator_ColumnPropNameInTable="ResultsColumn" msprop:Generator_ColumnPropNameInRow="Results" msprop:Generator_ColumnVarNameInTable="columnResults" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="300" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Opinion" msprop:Generator_ColumnPropNameInRow="Opinion" msprop:Generator_ColumnPropNameInTable="OpinionColumn" msprop:Generator_ColumnVarNameInTable="columnOpinion" msprop:Generator_UserColumnName="Opinion" minOccurs="0">
+              <xs:element name="Opinion" msprop:Generator_UserColumnName="Opinion" msprop:Generator_ColumnPropNameInTable="OpinionColumn" msprop:Generator_ColumnPropNameInRow="Opinion" msprop:Generator_ColumnVarNameInTable="columnOpinion" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="2000" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="PatientIdPatient" msprop:Generator_ColumnPropNameInRow="PatientIdPatient" msprop:Generator_ColumnPropNameInTable="PatientIdPatientColumn" msprop:Generator_ColumnVarNameInTable="columnPatientIdPatient" msprop:Generator_UserColumnName="PatientIdPatient" type="xs:int" minOccurs="0" />
-              <xs:element name="WorkWarrantId" msprop:Generator_ColumnPropNameInRow="WorkWarrantId" msprop:Generator_ColumnPropNameInTable="WorkWarrantIdColumn" msprop:Generator_ColumnVarNameInTable="columnWorkWarrantId" msprop:Generator_UserColumnName="WorkWarrantId" type="xs:int" minOccurs="0" />
+              <xs:element name="PatientIdPatient" msprop:Generator_UserColumnName="PatientIdPatient" msprop:Generator_ColumnPropNameInTable="PatientIdPatientColumn" msprop:Generator_ColumnPropNameInRow="PatientIdPatient" msprop:Generator_ColumnVarNameInTable="columnPatientIdPatient" type="xs:int" minOccurs="0" />
+              <xs:element name="WorkWarrantId" msprop:Generator_UserColumnName="WorkWarrantId" msprop:Generator_ColumnPropNameInTable="WorkWarrantIdColumn" msprop:Generator_ColumnPropNameInRow="WorkWarrantId" msprop:Generator_ColumnVarNameInTable="columnWorkWarrantId" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Work_x0020_Warrant" msprop:Generator_RowEvHandlerName="Work_WarrantRowChangeEventHandler" msprop:Generator_RowDeletedName="Work_WarrantRowDeleted" msprop:Generator_RowDeletingName="Work_WarrantRowDeleting" msprop:Generator_RowEvArgName="Work_WarrantRowChangeEvent" msprop:Generator_TablePropName="Work_Warrant" msprop:Generator_RowChangedName="Work_WarrantRowChanged" msprop:Generator_RowChangingName="Work_WarrantRowChanging" msprop:Generator_TableClassName="Work_WarrantDataTable" msprop:Generator_RowClassName="Work_WarrantRow" msprop:Generator_TableVarName="tableWork_Warrant" msprop:Generator_UserTableName="Work Warrant">
+        <xs:element name="Work_x0020_Warrant" msprop:Generator_RowClassName="Work_WarrantRow" msprop:Generator_RowEvHandlerName="Work_WarrantRowChangeEventHandler" msprop:Generator_RowDeletedName="Work_WarrantRowDeleted" msprop:Generator_RowDeletingName="Work_WarrantRowDeleting" msprop:Generator_RowEvArgName="Work_WarrantRowChangeEvent" msprop:Generator_TablePropName="Work_Warrant" msprop:Generator_RowChangedName="Work_WarrantRowChanged" msprop:Generator_UserTableName="Work Warrant" msprop:Generator_RowChangingName="Work_WarrantRowChanging" msprop:Generator_TableClassName="Work_WarrantDataTable" msprop:Generator_TableVarName="tableWork_Warrant">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="WorkWarrantId" msprop:Generator_ColumnPropNameInRow="WorkWarrantId" msprop:Generator_ColumnPropNameInTable="WorkWarrantIdColumn" msprop:Generator_ColumnVarNameInTable="columnWorkWarrantId" msprop:Generator_UserColumnName="WorkWarrantId" type="xs:int" />
-              <xs:element name="Date" msprop:Generator_ColumnPropNameInRow="Date" msprop:Generator_ColumnPropNameInTable="DateColumn" msprop:Generator_ColumnVarNameInTable="columnDate" msprop:Generator_UserColumnName="Date" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="Analysis" msprop:Generator_ColumnPropNameInRow="Analysis" msprop:Generator_ColumnPropNameInTable="AnalysisColumn" msprop:Generator_ColumnVarNameInTable="columnAnalysis" msprop:Generator_UserColumnName="Analysis" minOccurs="0">
+              <xs:element name="WorkWarrantId" msprop:Generator_UserColumnName="WorkWarrantId" msprop:Generator_ColumnPropNameInTable="WorkWarrantIdColumn" msprop:Generator_ColumnPropNameInRow="WorkWarrantId" msprop:Generator_ColumnVarNameInTable="columnWorkWarrantId" type="xs:int" />
+              <xs:element name="Date" msprop:Generator_UserColumnName="Date" msprop:Generator_ColumnPropNameInTable="DateColumn" msprop:Generator_ColumnPropNameInRow="Date" msprop:Generator_ColumnVarNameInTable="columnDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Analysis" msprop:Generator_UserColumnName="Analysis" msprop:Generator_ColumnPropNameInTable="AnalysisColumn" msprop:Generator_ColumnPropNameInRow="Analysis" msprop:Generator_ColumnVarNameInTable="columnAnalysis" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="300" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="CreatedBy" msprop:Generator_ColumnPropNameInRow="CreatedBy" msprop:Generator_ColumnPropNameInTable="CreatedByColumn" msprop:Generator_ColumnVarNameInTable="columnCreatedBy" msprop:Generator_UserColumnName="CreatedBy" minOccurs="0">
+              <xs:element name="CreatedBy" msprop:Generator_UserColumnName="CreatedBy" msprop:Generator_ColumnPropNameInTable="CreatedByColumn" msprop:Generator_ColumnPropNameInRow="CreatedBy" msprop:Generator_ColumnVarNameInTable="columnCreatedBy" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
@@ -312,8 +322,8 @@ SELECT WorkWarrantId, Date, Analysis, CreatedBy FROM [Work Warrant] WHERE (WorkW
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK_Sample_Patient1" msdata:parent="Patient" msdata:child="Sample" msdata:parentkey="PatientId" msdata:childkey="PatientIdPatient" msprop:Generator_UserParentTable="Patient" msprop:Generator_UserChildTable="Sample" msprop:Generator_RelationVarName="relationFK_Sample_Patient1" msprop:Generator_ChildPropName="GetSampleRows" msprop:Generator_ParentPropName="PatientRow" msprop:Generator_UserRelationName="FK_Sample_Patient1" />
-      <msdata:Relationship name="FK_Sample_Work_x0020_Warrant" msdata:parent="Work_x0020_Warrant" msdata:child="Sample" msdata:parentkey="WorkWarrantId" msdata:childkey="WorkWarrantId" msprop:Generator_UserParentTable="Work Warrant" msprop:Generator_UserChildTable="Sample" msprop:Generator_RelationVarName="relationFK_Sample_Work_Warrant" msprop:Generator_UserRelationName="FK_Sample_Work Warrant" msprop:Generator_ChildPropName="GetSampleRows" msprop:Generator_ParentPropName="Work_WarrantRow" />
+      <msdata:Relationship name="FK_Sample_Patient1" msdata:parent="Patient" msdata:child="Sample" msdata:parentkey="PatientId" msdata:childkey="PatientIdPatient" msprop:Generator_UserParentTable="Patient" msprop:Generator_UserChildTable="Sample" msprop:Generator_RelationVarName="relationFK_Sample_Patient1" msprop:Generator_ChildPropName="GetSampleRows" msprop:Generator_UserRelationName="FK_Sample_Patient1" msprop:Generator_ParentPropName="PatientRow" />
+      <msdata:Relationship name="FK_Sample_Work_x0020_Warrant" msdata:parent="Work_x0020_Warrant" msdata:child="Sample" msdata:parentkey="WorkWarrantId" msdata:childkey="WorkWarrantId" msprop:Generator_UserParentTable="Work Warrant" msprop:Generator_UserChildTable="Sample" msprop:Generator_RelationVarName="relationFK_Sample_Work_Warrant" msprop:Generator_ChildPropName="GetSampleRows" msprop:Generator_ParentPropName="Work_WarrantRow" msprop:Generator_UserRelationName="FK_Sample_Work Warrant" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>
