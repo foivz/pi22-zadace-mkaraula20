@@ -1,6 +1,6 @@
 ﻿namespace Lab_Assistant
 {
-    partial class frmPopisUzoraka
+    partial class FrmPopisUzoraka
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPopisUzoraka));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPopisUzoraka));
             this.label1 = new System.Windows.Forms.Label();
             this.dgvSamples = new System.Windows.Forms.DataGridView();
             this.btnOpenSample = new System.Windows.Forms.Button();
+            this.btnOpenSamples = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSamples)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,20 +73,31 @@
             this.btnOpenSample.Text = "Prikaži uzorak";
             this.btnOpenSample.UseVisualStyleBackColor = false;
             // 
-            // frmPopisUzoraka
+            // btnOpenSamples
+            // 
+            this.btnOpenSamples.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnOpenSamples.Location = new System.Drawing.Point(740, 485);
+            this.btnOpenSamples.Name = "btnOpenSamples";
+            this.btnOpenSamples.Size = new System.Drawing.Size(108, 47);
+            this.btnOpenSamples.TabIndex = 3;
+            this.btnOpenSamples.Text = "Otvori uzorke";
+            this.btnOpenSamples.UseVisualStyleBackColor = true;
+            this.btnOpenSamples.Click += new System.EventHandler(this.btnOpenSamples_Click);
+            // 
+            // FrmPopisUzoraka
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1003, 563);
+            this.Controls.Add(this.btnOpenSamples);
             this.Controls.Add(this.btnOpenSample);
             this.Controls.Add(this.dgvSamples);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "frmPopisUzoraka";
+            this.Name = "FrmPopisUzoraka";
             this.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.Text = "Popis uzoraka";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.FrmPopisUzoraka_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSamples)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -97,6 +109,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvSamples;
         private System.Windows.Forms.Button btnOpenSample;
+        private System.Windows.Forms.Button btnOpenSamples;
     }
 }
 

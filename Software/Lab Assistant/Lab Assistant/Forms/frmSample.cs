@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Lab_Assistant.Forms
 {
-    public partial class frmSample : Form
+    public partial class FrmSample : Form
     {
-        public frmSample()
+        public FrmSample()
         {
             InitializeComponent();
+        }
+
+        private void FrmSample_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

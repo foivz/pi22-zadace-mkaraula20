@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Lab_Assistant.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,16 +11,23 @@ using System.Windows.Forms;
 
 namespace Lab_Assistant
 {
-    public partial class frmPopisUzoraka : Form
+    public partial class FrmPopisUzoraka : Form
     {
-        public frmPopisUzoraka()
+        FrmSample frmSample = new FrmSample();
+        public FrmPopisUzoraka()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void FrmPopisUzoraka_Load(object sender, EventArgs e)
         {
-
+            
         }
+
+        private void btnOpenSamples_Click(object sender, EventArgs e)
+        {
+            frmSample.ShowDialog();
+         }
+
     }
 }

@@ -46,25 +46,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\frmPopisUzoraka.cs">
+    <Compile Include="DBLayer\obj\Debug\.NETFramework,Version=v4.8.AssemblyAttributes.cs" />
+    <Compile Include="Forms\FrmPopisUzoraka.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmPopisUzoraka.Designer.cs">
-      <DependentUpon>frmPopisUzoraka.cs</DependentUpon>
+    <Compile Include="Forms\FrmPopisUzoraka.Designer.cs">
+      <DependentUpon>FrmPopisUzoraka.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmSample.cs">
+    <Compile Include="Forms\FrmSample.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmSample.Designer.cs">
-      <DependentUpon>frmSample.cs</DependentUpon>
+    <Compile Include="Forms\FrmSample.Designer.cs">
+      <DependentUpon>FrmSample.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\frmPopisUzoraka.resx">
-      <DependentUpon>frmPopisUzoraka.cs</DependentUpon>
+    <Compile Include="Repositories\OpinionRepository.cs" />
+    <EmbeddedResource Include="Forms\FrmPopisUzoraka.resx">
+      <DependentUpon>FrmPopisUzoraka.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmSample.resx">
-      <DependentUpon>frmSample.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FrmSample.resx">
+      <DependentUpon>FrmSample.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -75,6 +77,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="DBLayer\obj\Debug\DBLayer.csproj.AssemblyReference.cache" />
+    <None Include="DBLayer\obj\Debug\DBLayer.csproj.CoreCompileInputs.cache" />
+    <None Include="DBLayer\obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -89,8 +94,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="DBLayer\bin\Release\" />
+    <Folder Include="DBLayer\obj\Debug\TempPE\" />
     <Folder Include="Models\" />
-    <Folder Include="Repositories\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DBLayer\bin\Debug\DBLayer.dll" />
+    <Content Include="DBLayer\bin\Debug\DBLayer.pdb" />
+    <Content Include="DBLayer\obj\Debug\DBLayer.csproj.FileListAbsolute.txt" />
+    <Content Include="DBLayer\obj\Debug\DBLayer.dll" />
+    <Content Include="DBLayer\obj\Debug\DBLayer.pdb" />
+    <Content Include="Dlls\DBLayer.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
