@@ -77,14 +77,6 @@
     <Compile Include="Forms\FrmSample.Designer.cs">
       <DependentUpon>FrmSample.cs</DependentUpon>
     </Compile>
-    <Compile Include="mkaraula20_DBDataSet.cs">
-      <DependentUpon>mkaraula20_DBDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="mkaraula20_DBDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>mkaraula20_DBDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Models\Patient.cs" />
     <Compile Include="Models\Sample.cs" />
     <Compile Include="Models\WorkWarrant.cs" />
@@ -107,17 +99,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="mkaraula20_DBDataSet.xsc">
-      <DependentUpon>mkaraula20_DBDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="mkaraula20_DBDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>mkaraula20_DBDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="mkaraula20_DBDataSet.xss">
-      <DependentUpon>mkaraula20_DBDataSet.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

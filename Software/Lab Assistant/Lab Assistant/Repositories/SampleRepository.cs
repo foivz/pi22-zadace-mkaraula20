@@ -15,6 +15,7 @@ namespace Lab_Assistant.Repositories
         {
             Sample sample = null;
             string sql = $"SELECT * FROM Sample WHERE SampleId = {id}";
+            DB.SetConfiguration("mkaraula20_DB", "mkaraula20", "Rv0w!:eA");
             DB.OpenConnection();
 
             var reader = DB.GetDataReader(sql);
@@ -33,6 +34,7 @@ namespace Lab_Assistant.Repositories
         {
             List<Sample> samples = new List<Sample>();
             string sql = $"SELECT * FROM Sample";
+            DB.SetConfiguration("mkaraula20_DB", "mkaraula20", "Rv0w!:eA");
             DB.OpenConnection();
             var reader = DB.GetDataReader(sql);
             while (reader.Read())
