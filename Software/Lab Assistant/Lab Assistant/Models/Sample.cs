@@ -13,7 +13,7 @@ namespace Lab_Assistant.Models
         public string Status { get; set; }
         public string Results { get; set; }
         public string Opinion { get; set; }
-        Patient Patient { get; set; }
-        WorkWarrant WorkWarrant { get; set; }
+        public int PatientId { get; set; }
+        public int WorkWarrantId { get; set; }
     }
 }

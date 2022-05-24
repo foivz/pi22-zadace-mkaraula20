@@ -1,4 +1,6 @@
-﻿using Lab_Assistant.Forms;
+﻿using DBLayer;
+using Lab_Assistant.Forms;
+using Lab_Assistant.Models;
 using Lab_Assistant.Repositories;
 using System;
 using System.Collections.Generic;
@@ -12,12 +14,13 @@ using System.Windows.Forms;
 
 namespace Lab_Assistant
 {
-    public partial class FrmPopisUzoraka : Form
+    public partial class FrmSamplesList : Form
     {
-        FrmSample frmSample = new FrmSample();
-        public FrmPopisUzoraka()
+
+        public FrmSamplesList()
         {
             InitializeComponent();
+            DB.SetConfiguration("mkaraula20_DB", "mkaraula20", "Rv0w!:eA");
         }
 
         private void FrmPopisUzoraka_Load(object sender, EventArgs e)
@@ -36,9 +39,14 @@ namespace Lab_Assistant
             dgvSamples.Columns["Opinion"].DisplayIndex = 3;
         }
 
-        private void btnOpenSamples_Click(object sender, EventArgs e)
+        private void btnOpenSample_Click(object sender, EventArgs e)
         {
-            frmSample.ShowDialog();
+            Sample selectedSample = dgvSamples.CurrentRow.DataBoundItem as Sample;
+            if (selectedSample != null)
+            {
+                FrmSample frmSample = new FrmSample(selectedSample);
+                frmSample.ShowDialog();
+            }
          }
 
     }

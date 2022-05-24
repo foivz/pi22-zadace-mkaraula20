@@ -65,11 +65,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\FrmPopisUzoraka.cs">
+    <Compile Include="Forms\FrmSamplesList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FrmPopisUzoraka.Designer.cs">
-      <DependentUpon>FrmPopisUzoraka.cs</DependentUpon>
+    <Compile Include="Forms\FrmSamplesList.Designer.cs">
+      <DependentUpon>FrmSamplesList.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FrmSample.cs">
       <SubType>Form</SubType>
@@ -83,9 +83,10 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\OpinionRepository.cs" />
+    <Compile Include="Repositories\PatientRepository.cs" />
     <Compile Include="Repositories\SampleRepository.cs" />
-    <EmbeddedResource Include="Forms\FrmPopisUzoraka.resx">
-      <DependentUpon>FrmPopisUzoraka.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FrmSamplesList.resx">
+      <DependentUpon>FrmSamplesList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmSample.resx">
       <DependentUpon>FrmSample.cs</DependentUpon>

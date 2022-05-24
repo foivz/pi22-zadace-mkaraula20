@@ -54,6 +54,8 @@ namespace Lab_Assistant.Repositories
             string status = reader["Status"].ToString();
             string results = reader["Results"].ToString();
             string opinion = reader["Opinion"].ToString();
+            int patientId = int.Parse(reader["PatientIdPatient"].ToString());
+            int workWarrantId = int.Parse(reader["WorkWarrantId"].ToString());
 
             var sample = new Sample
             {
@@ -61,7 +63,9 @@ namespace Lab_Assistant.Repositories
                 Date = date,
                 Status = status,
                 Results = results,
-                Opinion = opinion
+                Opinion = opinion,
+                PatientId = patientId,
+                WorkWarrantId = workWarrantId
             };
             return sample;
         }

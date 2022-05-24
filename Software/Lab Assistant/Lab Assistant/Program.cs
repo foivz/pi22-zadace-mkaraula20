@@ -16,7 +16,7 @@ namespace Lab_Assistant
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmPopisUzoraka());
+            Application.Run(new FrmSamplesList());
         }
     }
 }
