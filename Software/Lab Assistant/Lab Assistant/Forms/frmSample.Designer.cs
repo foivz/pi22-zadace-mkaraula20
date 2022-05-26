@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSample));
             this.label1 = new System.Windows.Forms.Label();
             this.txtSampleId = new System.Windows.Forms.TextBox();
-            this.btnWriteAnalysisResults = new System.Windows.Forms.Button();
             this.btnChangeAnalysisData = new System.Windows.Forms.Button();
             this.btnShowAnlysisHistory = new System.Windows.Forms.Button();
             this.btnWriteOpinion = new System.Windows.Forms.Button();
@@ -47,6 +46,7 @@
             this.txtOpinion = new System.Windows.Forms.TextBox();
             this.txtPatient = new System.Windows.Forms.TextBox();
             this.txtWorkWarrant = new System.Windows.Forms.TextBox();
+            this.btnDeleteOpinion = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -70,20 +70,10 @@
             this.txtSampleId.Size = new System.Drawing.Size(120, 24);
             this.txtSampleId.TabIndex = 1;
             // 
-            // btnWriteAnalysisResults
-            // 
-            this.btnWriteAnalysisResults.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnWriteAnalysisResults.Location = new System.Drawing.Point(12, 633);
-            this.btnWriteAnalysisResults.Name = "btnWriteAnalysisResults";
-            this.btnWriteAnalysisResults.Size = new System.Drawing.Size(143, 47);
-            this.btnWriteAnalysisResults.TabIndex = 3;
-            this.btnWriteAnalysisResults.Text = "Upiši rezultat analize";
-            this.btnWriteAnalysisResults.UseVisualStyleBackColor = true;
-            // 
             // btnChangeAnalysisData
             // 
             this.btnChangeAnalysisData.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnChangeAnalysisData.Location = new System.Drawing.Point(207, 633);
+            this.btnChangeAnalysisData.Location = new System.Drawing.Point(22, 633);
             this.btnChangeAnalysisData.Name = "btnChangeAnalysisData";
             this.btnChangeAnalysisData.Size = new System.Drawing.Size(143, 47);
             this.btnChangeAnalysisData.TabIndex = 4;
@@ -93,7 +83,7 @@
             // btnShowAnlysisHistory
             // 
             this.btnShowAnlysisHistory.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnShowAnlysisHistory.Location = new System.Drawing.Point(402, 633);
+            this.btnShowAnlysisHistory.Location = new System.Drawing.Point(213, 633);
             this.btnShowAnlysisHistory.Name = "btnShowAnlysisHistory";
             this.btnShowAnlysisHistory.Size = new System.Drawing.Size(143, 47);
             this.btnShowAnlysisHistory.TabIndex = 5;
@@ -103,12 +93,13 @@
             // btnWriteOpinion
             // 
             this.btnWriteOpinion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnWriteOpinion.Location = new System.Drawing.Point(597, 633);
+            this.btnWriteOpinion.Location = new System.Drawing.Point(595, 633);
             this.btnWriteOpinion.Name = "btnWriteOpinion";
             this.btnWriteOpinion.Size = new System.Drawing.Size(143, 47);
             this.btnWriteOpinion.TabIndex = 6;
             this.btnWriteOpinion.Text = "Upiši mišljenje";
             this.btnWriteOpinion.UseVisualStyleBackColor = true;
+            this.btnWriteOpinion.Click += new System.EventHandler(this.btnWriteOpinion_Click);
             // 
             // label2
             // 
@@ -240,11 +231,22 @@
             this.txtWorkWarrant.Size = new System.Drawing.Size(100, 13);
             this.txtWorkWarrant.TabIndex = 18;
             // 
+            // btnDeleteOpinion
+            // 
+            this.btnDeleteOpinion.Location = new System.Drawing.Point(404, 633);
+            this.btnDeleteOpinion.Name = "btnDeleteOpinion";
+            this.btnDeleteOpinion.Size = new System.Drawing.Size(143, 47);
+            this.btnDeleteOpinion.TabIndex = 19;
+            this.btnDeleteOpinion.Text = "Obriši mišljenje";
+            this.btnDeleteOpinion.UseVisualStyleBackColor = true;
+            this.btnDeleteOpinion.Click += new System.EventHandler(this.btnDeleteOpinion_Click);
+            // 
             // FrmSample
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(752, 700);
+            this.Controls.Add(this.btnDeleteOpinion);
             this.Controls.Add(this.txtWorkWarrant);
             this.Controls.Add(this.txtPatient);
             this.Controls.Add(this.txtOpinion);
@@ -260,7 +262,6 @@
             this.Controls.Add(this.btnWriteOpinion);
             this.Controls.Add(this.btnShowAnlysisHistory);
             this.Controls.Add(this.btnChangeAnalysisData);
-            this.Controls.Add(this.btnWriteAnalysisResults);
             this.Controls.Add(this.txtSampleId);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -276,7 +277,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtSampleId;
-        private System.Windows.Forms.Button btnWriteAnalysisResults;
         private System.Windows.Forms.Button btnChangeAnalysisData;
         private System.Windows.Forms.Button btnShowAnlysisHistory;
         private System.Windows.Forms.Button btnWriteOpinion;
@@ -292,5 +292,6 @@
         private System.Windows.Forms.TextBox txtOpinion;
         private System.Windows.Forms.TextBox txtPatient;
         private System.Windows.Forms.TextBox txtWorkWarrant;
+        private System.Windows.Forms.Button btnDeleteOpinion;
     }
 }

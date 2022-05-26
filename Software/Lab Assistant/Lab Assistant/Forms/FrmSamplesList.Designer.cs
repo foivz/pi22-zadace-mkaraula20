@@ -32,6 +32,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dgvSamples = new System.Windows.Forms.DataGridView();
             this.btnOpenSample = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSamples)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,6 +60,7 @@
             this.dgvSamples.ReadOnly = true;
             this.dgvSamples.Size = new System.Drawing.Size(956, 394);
             this.dgvSamples.TabIndex = 1;
+            this.dgvSamples.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSamples_CellValueChanged);
             // 
             // btnOpenSample
             // 
@@ -71,16 +73,27 @@
             this.btnOpenSample.UseVisualStyleBackColor = true;
             this.btnOpenSample.Click += new System.EventHandler(this.btnOpenSample_Click);
             // 
-            // FrmPopisUzoraka
+            // btnRefresh
+            // 
+            this.btnRefresh.Location = new System.Drawing.Point(757, 485);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(108, 47);
+            this.btnRefresh.TabIndex = 4;
+            this.btnRefresh.Text = "Osvježi";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // FrmSamplesList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1003, 563);
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnOpenSample);
             this.Controls.Add(this.dgvSamples);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "FrmPopisUzoraka";
+            this.Name = "FrmSamplesList";
             this.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.Text = "Popis uzoraka";
             this.Load += new System.EventHandler(this.FrmPopisUzoraka_Load);
@@ -95,6 +108,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvSamples;
         private System.Windows.Forms.Button btnOpenSample;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }
 

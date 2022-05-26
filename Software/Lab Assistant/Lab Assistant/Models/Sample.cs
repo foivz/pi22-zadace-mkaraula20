@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Lab_Assistant.Repositories;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,5 +16,11 @@ namespace Lab_Assistant.Models
         public string Opinion { get; set; }
         public int PatientId { get; set; }
         public int WorkWarrantId { get; set; }
+
+        public void WriteOpinion(Sample selectedSample, string opinion)
+        {
+
+            OpinionRepository.SetOpinion(selectedSample, opinion);
+        }
     }
 }

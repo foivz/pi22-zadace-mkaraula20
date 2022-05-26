@@ -1,4 +1,5 @@
-﻿using Lab_Assistant.Models;
+﻿using DBLayer;
+using Lab_Assistant.Models;
 using Lab_Assistant.Repositories;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,7 @@ namespace Lab_Assistant.Forms
     {
         private Sample sample;
         public Sample SelectedSample { get => sample; set => sample = value; }
+
         public FrmSample(Sample selectedSample)
         {
             InitializeComponent();
@@ -23,6 +25,11 @@ namespace Lab_Assistant.Forms
         }
 
         private void FrmSample_Load(object sender, EventArgs e)
+        {
+            ShowSample();
+        }
+
+        private void ShowSample()
         {
             var sample = SampleRepository.GetSample(SelectedSample.SampleId);
             txtSampleId.Text = sample.SampleId.ToString();
@@ -32,6 +39,32 @@ namespace Lab_Assistant.Forms
             txtPatient.Text = PatientRepository.GetPatient(SelectedSample.PatientId).Name + " " + PatientRepository.GetPatient(SelectedSample.PatientId).Surname;
             txtWorkWarrant.Text = sample.WorkWarrantId.ToString();
             txtResult.Text = sample.Results;
+        }
+
+        private void btnWriteOpinion_Click(object sender, EventArgs e)
+        {
+            if (txtResult.Text != "")
+            {
+                FrmOpinion frmOpinion = new FrmOpinion(SelectedSample);
+                Hide();
+                frmOpinion.ShowDialog();
+            }
+            else
+            {
+                string message = "Nije moguće upisati specijalističko mišljenje na uzorak bez rezultata analize!";
+                string caption = "Rezultat analize nije unešen";
+                MessageBoxButtons button = MessageBoxButtons.OK;
+                MessageBox.Show(message, caption, button);
+            }
+        }
+
+        private void btnDeleteOpinion_Click(object sender, EventArgs e)
+        {
+            if(SelectedSample.Opinion != "")
+            {
+                SampleRepository.DeleteOpinion(SelectedSample.SampleId);
+                ShowSample();
+            }
         }
     }
 }

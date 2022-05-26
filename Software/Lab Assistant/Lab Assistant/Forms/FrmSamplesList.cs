@@ -49,5 +49,14 @@ namespace Lab_Assistant
             }
          }
 
+        private void dgvSamples_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            ShowSamples();
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            ShowSamples();
+        }
     }
 }
