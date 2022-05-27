@@ -22,7 +22,7 @@ namespace Lab_Assistant.Repositories
             if (reader.HasRows)
             {
                 reader.Read();
-                sample = CreateObject(reader);
+                sample = CreateSampleObject(reader);
                 reader.Close();
             }
 
@@ -39,7 +39,7 @@ namespace Lab_Assistant.Repositories
             var reader = DB.GetDataReader(sql);
             while (reader.Read())
             {
-                Sample sample = CreateObject(reader);
+                Sample sample = CreateSampleObject(reader);
                 samples.Add(sample);
             }
             reader.Close();
@@ -47,7 +47,7 @@ namespace Lab_Assistant.Repositories
             return samples;
         }
 
-        private static Sample CreateObject(SqlDataReader reader)
+        private static Sample CreateSampleObject(SqlDataReader reader)
         {
             int id = int.Parse(reader["SampleId"].ToString());
             string date = reader["Date"].ToString();
@@ -68,6 +68,57 @@ namespace Lab_Assistant.Repositories
                 WorkWarrantId = workWarrantId
             };
             return sample;
+        }
+
+        public static List<Patient> GetSearchedPatients(string patientName)
+        {
+            string sql = $"SELECT * FROM Patient WHERE Name = '{patientName}' OR Surname = '{patientName}'";
+            List<Patient> searchedPatients = new List<Patient>();
+            DB.OpenConnection();
+            var reader = DB.GetDataReader(sql);
+            while (reader.Read())
+            {
+                Patient patient = CreatePatientObject(reader);
+                searchedPatients.Add(patient);
+            }
+            reader.Close();
+            DB.CloseConnection();
+            return searchedPatients;
+        }
+
+
+        private static Patient CreatePatientObject(SqlDataReader reader)
+        {
+            int id = int.Parse(reader["PatientId"].ToString());
+            string name = reader["Name"].ToString();
+            string surname = reader["Surname"].ToString();
+
+            var patient = new Patient
+            {
+                Id = id,
+                Name = name,
+                Surname = surname
+            };
+            return patient;
+        }
+
+        public static List<Sample> GetSearchedSamples(List<Patient> patients)
+        {
+            List<Sample> searchedSamples = new List<Sample>();
+            DB.OpenConnection();
+            foreach (Patient patient in patients)
+            {
+                string sql = $"SELECT * FROM Sample WHERE PatientIdPatient = {patient.Id}";
+                var reader = DB.GetDataReader(sql);
+                while (reader.Read())
+                {
+                    Sample sample = CreateSampleObject(reader);
+                    searchedSamples.Add(sample);
+                }
+                reader.Close();
+            }
+            DB.CloseConnection();
+            return searchedSamples;
         }
 
         internal static void DeleteOpinion(int id)

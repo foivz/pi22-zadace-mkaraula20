@@ -66,5 +66,6 @@ namespace Lab_Assistant.Forms
                 ShowSample();
             }
         }
+
     }
 }

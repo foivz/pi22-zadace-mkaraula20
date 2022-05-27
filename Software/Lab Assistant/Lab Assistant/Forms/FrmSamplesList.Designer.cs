@@ -33,6 +33,10 @@
             this.dgvSamples = new System.Windows.Forms.DataGridView();
             this.btnOpenSample = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
+            this.txtPatientSearch = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnClear = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSamples)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,7 +59,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvSamples.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvSamples.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSamples.Location = new System.Drawing.Point(23, 52);
+            this.dgvSamples.Location = new System.Drawing.Point(23, 85);
             this.dgvSamples.Name = "dgvSamples";
             this.dgvSamples.ReadOnly = true;
             this.dgvSamples.Size = new System.Drawing.Size(956, 394);
@@ -83,11 +87,50 @@
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
+            // txtPatientSearch
+            // 
+            this.txtPatientSearch.Location = new System.Drawing.Point(615, 59);
+            this.txtPatientSearch.Name = "txtPatientSearch";
+            this.txtPatientSearch.Size = new System.Drawing.Size(142, 20);
+            this.txtPatientSearch.TabIndex = 5;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(763, 59);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(108, 23);
+            this.btnSearch.TabIndex = 6;
+            this.btnSearch.Text = "Pretraži";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(612, 43);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(137, 13);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Pretraži po imenu pacijenta:";
+            // 
+            // btnClear
+            // 
+            this.btnClear.Location = new System.Drawing.Point(878, 59);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(101, 23);
+            this.btnClear.TabIndex = 8;
+            this.btnClear.Text = "Poništi";
+            this.btnClear.UseVisualStyleBackColor = true;
+            // 
             // FrmSamplesList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1003, 563);
+            this.Controls.Add(this.btnClear);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.txtPatientSearch);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnOpenSample);
             this.Controls.Add(this.dgvSamples);
@@ -109,6 +152,10 @@
         private System.Windows.Forms.DataGridView dgvSamples;
         private System.Windows.Forms.Button btnOpenSample;
         private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.TextBox txtPatientSearch;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnClear;
     }
 }
 

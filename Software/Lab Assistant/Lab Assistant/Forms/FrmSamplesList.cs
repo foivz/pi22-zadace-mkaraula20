@@ -58,5 +58,25 @@ namespace Lab_Assistant
         {
             ShowSamples();
         }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            if (txtPatientSearch.Text != "")
+            {
+                string searchPatient = txtPatientSearch.Text;
+                ShowSearchedSamples(searchPatient);
+            }
+        }
+
+        private void ShowSearchedSamples(string patientName)
+        {
+            var searchedSamples = SampleRepository.GetSearchedSamples(SampleRepository.GetSearchedPatients(patientName));
+            dgvSamples.DataSource = searchedSamples;
+
+            dgvSamples.Columns["SampleId"].DisplayIndex = 0;
+            dgvSamples.Columns["Date"].DisplayIndex = 1;
+            dgvSamples.Columns["Status"].DisplayIndex = 2;
+            dgvSamples.Columns["Opinion"].DisplayIndex = 3;
+        }
     }
 }
