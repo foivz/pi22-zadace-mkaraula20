@@ -23,9 +23,8 @@ namespace Lab_Assistant.Forms
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            Hide();
-            Close();
             FrmSamplesList frmSamplesList = new FrmSamplesList();
+            Hide();
             frmSamplesList.ShowDialog();
         }
 
@@ -44,7 +43,7 @@ namespace Lab_Assistant.Forms
         private void btnCreateSample_Click(object sender, EventArgs e)
         {
             NewSample.WorkWarrantId = int.Parse(cboWorkWarrant.Text);
-            NewSample.PatientId = cboPatient.SelectedIndex;
+            NewSample.PatientId = cboPatient.SelectedIndex + 1;
             NewSample.Results = txtResult.Text;
             NewSample.Status = txtStatus.Text;
             SampleRepository.CreateSample(NewSample);

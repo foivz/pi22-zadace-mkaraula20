@@ -163,8 +163,12 @@
             this.Controls.Add(this.dgvSamples);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(1019, 602);
+            this.MinimumSize = new System.Drawing.Size(1019, 602);
             this.Name = "FrmSamplesList";
             this.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Popis uzoraka";
             this.Load += new System.EventHandler(this.FrmPopisUzoraka_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSamples)).EndInit();

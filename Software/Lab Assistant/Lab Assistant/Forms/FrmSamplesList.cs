@@ -33,10 +33,14 @@ namespace Lab_Assistant
             var samples = SampleRepository.GetSamples();
             dgvSamples.DataSource = samples;
 
-            dgvSamples.Columns["SampleId"].DisplayIndex = 0;
-            dgvSamples.Columns["Date"].DisplayIndex = 1;
-            dgvSamples.Columns["Status"].DisplayIndex = 2;
-            dgvSamples.Columns["Opinion"].DisplayIndex = 3;
+            dgvSamples.Columns["SampleId"].HeaderCell.Value = "Šifra uzorka";
+            dgvSamples.Columns["Date"].HeaderCell.Value = "Datum vađenja uzorka";
+            dgvSamples.Columns["Status"].HeaderCell.Value = "Status uzorka";
+            dgvSamples.Columns["Opinion"].HeaderCell.Value = "Specijalističko mišljenje";
+            dgvSamples.Columns["Results"].HeaderCell.Value = "Rezultati analize";
+            dgvSamples.Columns[5].HeaderCell.Value = "Šifra pacijenta";
+            dgvSamples.Columns["WorkWarrantId"].HeaderCell.Value = "Šifra radnog naloga";
+            dgvSamples.GridColor = Color.Wheat;
         }
 
         private void btnOpenSample_Click(object sender, EventArgs e)
@@ -72,10 +76,14 @@ namespace Lab_Assistant
         {
             var searchedSamples = SampleRepository.GetSearchedSamples(PatientRepository.GetSearchedPatients(patientName));
             dgvSamples.DataSource = searchedSamples;
-            dgvSamples.Columns["SampleId"].DisplayIndex = 0;
-            dgvSamples.Columns["Date"].DisplayIndex = 1;
-            dgvSamples.Columns["Status"].DisplayIndex = 2;
-            dgvSamples.Columns["Opinion"].DisplayIndex = 3;
+            dgvSamples.Columns["SampleId"].HeaderCell.Value = "Šifra uzorka";
+            dgvSamples.Columns["Date"].HeaderCell.Value = "Datum vađenja uzorka";
+            dgvSamples.Columns["Status"].HeaderCell.Value = "Status uzorka";
+            dgvSamples.Columns["Opinion"].HeaderCell.Value = "Specijalističko mišljenje";
+            dgvSamples.Columns["Results"].HeaderCell.Value = "Rezultati analize";
+            dgvSamples.Columns[5].HeaderCell.Value = "Šifra pacijenta";
+            dgvSamples.Columns["WorkWarrantId"].HeaderCell.Value = "Šifra radnog naloga";
+            dgvSamples.GridColor = Color.Wheat;
         }
 
         private void btnClear_Click(object sender, EventArgs e)

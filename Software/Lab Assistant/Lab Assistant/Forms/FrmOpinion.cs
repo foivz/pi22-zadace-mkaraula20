@@ -45,5 +45,12 @@ namespace Lab_Assistant.Forms
             frmSample.ShowDialog();
             Close();
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            FrmSample frmSample = new FrmSample(SelectedSample);
+            frmSample.ShowDialog();
+            Close();
+        }
     }
 }

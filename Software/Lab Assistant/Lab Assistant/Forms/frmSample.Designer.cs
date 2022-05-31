@@ -31,8 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSample));
             this.label1 = new System.Windows.Forms.Label();
             this.txtSampleId = new System.Windows.Forms.TextBox();
-            this.btnChangeAnalysisData = new System.Windows.Forms.Button();
-            this.btnShowAnlysisHistory = new System.Windows.Forms.Button();
             this.btnWriteOpinion = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -70,26 +68,6 @@
             this.txtSampleId.Size = new System.Drawing.Size(120, 24);
             this.txtSampleId.TabIndex = 1;
             // 
-            // btnChangeAnalysisData
-            // 
-            this.btnChangeAnalysisData.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnChangeAnalysisData.Location = new System.Drawing.Point(22, 633);
-            this.btnChangeAnalysisData.Name = "btnChangeAnalysisData";
-            this.btnChangeAnalysisData.Size = new System.Drawing.Size(143, 47);
-            this.btnChangeAnalysisData.TabIndex = 4;
-            this.btnChangeAnalysisData.Text = "Izmijeni podatke o analizi";
-            this.btnChangeAnalysisData.UseVisualStyleBackColor = true;
-            // 
-            // btnShowAnlysisHistory
-            // 
-            this.btnShowAnlysisHistory.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnShowAnlysisHistory.Location = new System.Drawing.Point(213, 633);
-            this.btnShowAnlysisHistory.Name = "btnShowAnlysisHistory";
-            this.btnShowAnlysisHistory.Size = new System.Drawing.Size(143, 47);
-            this.btnShowAnlysisHistory.TabIndex = 5;
-            this.btnShowAnlysisHistory.Text = "Prikaži povijest analiza";
-            this.btnShowAnlysisHistory.UseVisualStyleBackColor = true;
-            // 
             // btnWriteOpinion
             // 
             this.btnWriteOpinion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -97,7 +75,7 @@
             this.btnWriteOpinion.Name = "btnWriteOpinion";
             this.btnWriteOpinion.Size = new System.Drawing.Size(143, 47);
             this.btnWriteOpinion.TabIndex = 6;
-            this.btnWriteOpinion.Text = "Upiši mišljenje";
+            this.btnWriteOpinion.Text = "Upiši / uredi mišljenje";
             this.btnWriteOpinion.UseVisualStyleBackColor = true;
             this.btnWriteOpinion.Click += new System.EventHandler(this.btnWriteOpinion_Click);
             // 
@@ -233,7 +211,7 @@
             // 
             // btnDeleteOpinion
             // 
-            this.btnDeleteOpinion.Location = new System.Drawing.Point(404, 633);
+            this.btnDeleteOpinion.Location = new System.Drawing.Point(446, 633);
             this.btnDeleteOpinion.Name = "btnDeleteOpinion";
             this.btnDeleteOpinion.Size = new System.Drawing.Size(143, 47);
             this.btnDeleteOpinion.TabIndex = 19;
@@ -260,12 +238,14 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnWriteOpinion);
-            this.Controls.Add(this.btnShowAnlysisHistory);
-            this.Controls.Add(this.btnChangeAnalysisData);
             this.Controls.Add(this.txtSampleId);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(768, 739);
+            this.MinimumSize = new System.Drawing.Size(768, 739);
             this.Name = "FrmSample";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Uzorak";
             this.Load += new System.EventHandler(this.FrmSample_Load);
             this.ResumeLayout(false);
@@ -277,8 +257,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtSampleId;
-        private System.Windows.Forms.Button btnChangeAnalysisData;
-        private System.Windows.Forms.Button btnShowAnlysisHistory;
         private System.Windows.Forms.Button btnWriteOpinion;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

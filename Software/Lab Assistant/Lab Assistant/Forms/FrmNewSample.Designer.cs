@@ -179,7 +179,11 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtDate);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(630, 378);
+            this.MinimumSize = new System.Drawing.Size(630, 378);
             this.Name = "FrmNewSample";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Kreiraj novi uzorak";
             this.Load += new System.EventHandler(this.FrmNewSample_Load);
             this.ResumeLayout(false);
