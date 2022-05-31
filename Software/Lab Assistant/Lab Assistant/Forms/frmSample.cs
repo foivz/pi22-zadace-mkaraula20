@@ -62,7 +62,7 @@ namespace Lab_Assistant.Forms
         {
             if(SelectedSample.Opinion != "")
             {
-                SampleRepository.DeleteOpinion(SelectedSample.SampleId);
+                OpinionRepository.DeleteOpinion(SelectedSample.SampleId);
                 ShowSample();
             }
         }

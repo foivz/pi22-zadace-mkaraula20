@@ -70,13 +70,35 @@ namespace Lab_Assistant
 
         private void ShowSearchedSamples(string patientName)
         {
-            var searchedSamples = SampleRepository.GetSearchedSamples(SampleRepository.GetSearchedPatients(patientName));
+            var searchedSamples = SampleRepository.GetSearchedSamples(PatientRepository.GetSearchedPatients(patientName));
             dgvSamples.DataSource = searchedSamples;
-
             dgvSamples.Columns["SampleId"].DisplayIndex = 0;
             dgvSamples.Columns["Date"].DisplayIndex = 1;
             dgvSamples.Columns["Status"].DisplayIndex = 2;
             dgvSamples.Columns["Opinion"].DisplayIndex = 3;
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtPatientSearch.Text = "";
+            ShowSamples();
+        }
+
+        private void btnCreateNewSample_Click(object sender, EventArgs e)
+        {
+            FrmNewSample frmNewSample = new FrmNewSample();
+            frmNewSample.ShowDialog();
+            Close();
+        }
+
+        private void btnDeleteSample_Click(object sender, EventArgs e)
+        {
+            Sample selectedSample = dgvSamples.CurrentRow.DataBoundItem as Sample;
+            if(selectedSample != null)
+            {
+                SampleRepository.DeleteSample(selectedSample);
+                ShowSamples();
+            }
         }
     }
 }

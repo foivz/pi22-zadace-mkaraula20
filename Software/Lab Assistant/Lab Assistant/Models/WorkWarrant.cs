@@ -11,5 +11,9 @@ namespace Lab_Assistant.Models
         public int WorkWarrantId { get; set; }
         public DateTime WorkWarrantDate { get; set; }
         public string WorkWarrantAnalysis { get; set; }
+        public override string ToString()
+        {
+            return WorkWarrantId.ToString();
+        }
     }
 }

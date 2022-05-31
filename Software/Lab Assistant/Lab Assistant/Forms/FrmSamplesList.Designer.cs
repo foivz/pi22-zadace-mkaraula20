@@ -37,6 +37,8 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.btnClear = new System.Windows.Forms.Button();
+            this.btnCreateNewSample = new System.Windows.Forms.Button();
+            this.btnDeleteSample = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSamples)).BeginInit();
             this.SuspendLayout();
             // 
@@ -121,12 +123,37 @@
             this.btnClear.TabIndex = 8;
             this.btnClear.Text = "Poništi";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // btnCreateNewSample
+            // 
+            this.btnCreateNewSample.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnCreateNewSample.Location = new System.Drawing.Point(23, 486);
+            this.btnCreateNewSample.Name = "btnCreateNewSample";
+            this.btnCreateNewSample.Size = new System.Drawing.Size(108, 47);
+            this.btnCreateNewSample.TabIndex = 9;
+            this.btnCreateNewSample.Text = "Kreiraj novi uzorak";
+            this.btnCreateNewSample.UseVisualStyleBackColor = false;
+            this.btnCreateNewSample.Click += new System.EventHandler(this.btnCreateNewSample_Click);
+            // 
+            // btnDeleteSample
+            // 
+            this.btnDeleteSample.BackColor = System.Drawing.Color.LightCoral;
+            this.btnDeleteSample.Location = new System.Drawing.Point(144, 486);
+            this.btnDeleteSample.Name = "btnDeleteSample";
+            this.btnDeleteSample.Size = new System.Drawing.Size(108, 47);
+            this.btnDeleteSample.TabIndex = 10;
+            this.btnDeleteSample.Text = "Izbriši uzorak";
+            this.btnDeleteSample.UseVisualStyleBackColor = false;
+            this.btnDeleteSample.Click += new System.EventHandler(this.btnDeleteSample_Click);
             // 
             // FrmSamplesList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1003, 563);
+            this.Controls.Add(this.btnDeleteSample);
+            this.Controls.Add(this.btnCreateNewSample);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnSearch);
@@ -156,6 +183,8 @@
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnCreateNewSample;
+        private System.Windows.Forms.Button btnDeleteSample;
     }
 }
 

@@ -28,6 +28,39 @@ namespace Lab_Assistant.Repositories
             return patient;
         }
 
+        public static List<Patient> GetPatients()
+        {
+            List<Patient> patients = new List<Patient>();
+            string sql = $"SELECT * FROM Patient";
+            DB.OpenConnection();
+            var reader = DB.GetDataReader(sql);
+            while (reader.Read())
+            {
+                Patient patient = CreateObject(reader);
+                patients.Add(patient);
+            }
+            reader.Close();
+            DB.CloseConnection();
+            return patients;
+        }
+
+
+        public static List<Patient> GetSearchedPatients(string patientName)
+        {
+            string sql = $"SELECT * FROM Patient WHERE Name LIKE '%{patientName}%' OR Surname LIKE '%{patientName}%'";
+            List<Patient> searchedPatients = new List<Patient>();
+            DB.OpenConnection();
+            var reader = DB.GetDataReader(sql);
+            while (reader.Read())
+            {
+                Patient patient = CreateObject(reader);
+                searchedPatients.Add(patient);
+            }
+            reader.Close();
+            DB.CloseConnection();
+            return searchedPatients;
+        }
+
         private static Patient CreateObject(SqlDataReader reader)
         {
 

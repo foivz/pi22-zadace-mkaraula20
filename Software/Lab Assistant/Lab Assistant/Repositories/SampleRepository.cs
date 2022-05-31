@@ -70,37 +70,6 @@ namespace Lab_Assistant.Repositories
             return sample;
         }
 
-        public static List<Patient> GetSearchedPatients(string patientName)
-        {
-            string sql = $"SELECT * FROM Patient WHERE Name = '{patientName}' OR Surname = '{patientName}'";
-            List<Patient> searchedPatients = new List<Patient>();
-            DB.OpenConnection();
-            var reader = DB.GetDataReader(sql);
-            while (reader.Read())
-            {
-                Patient patient = CreatePatientObject(reader);
-                searchedPatients.Add(patient);
-            }
-            reader.Close();
-            DB.CloseConnection();
-            return searchedPatients;
-        }
-
-
-        private static Patient CreatePatientObject(SqlDataReader reader)
-        {
-            int id = int.Parse(reader["PatientId"].ToString());
-            string name = reader["Name"].ToString();
-            string surname = reader["Surname"].ToString();
-
-            var patient = new Patient
-            {
-                Id = id,
-                Name = name,
-                Surname = surname
-            };
-            return patient;
-        }
 
         public static List<Sample> GetSearchedSamples(List<Patient> patients)
         {
@@ -121,9 +90,18 @@ namespace Lab_Assistant.Repositories
             return searchedSamples;
         }
 
-        internal static void DeleteOpinion(int id)
+
+        public static void CreateSample(Sample sample)
         {
-            string sql = $"UPDATE Sample SET Opinion = null WHERE SampleId = {id}";
+            string sql = $"INSERT INTO Sample (SampleId, Date, Status, Results, PatientIdPatient, WorkWarrantId) VALUES ({sample.SampleId}, GETDATE(), '{sample.Status}', '{sample.Results}', {sample.PatientId}, {sample.WorkWarrantId})";
+            DB.OpenConnection();
+            DB.ExecuteCommand(sql);
+            DB.CloseConnection();
+        }
+
+        public static void DeleteSample(Sample selectedSample)
+        {
+            string sql = $"DELETE FROM Sample WHERE SampleId = {selectedSample.SampleId}";
             DB.OpenConnection();
             DB.ExecuteCommand(sql);
             DB.CloseConnection();

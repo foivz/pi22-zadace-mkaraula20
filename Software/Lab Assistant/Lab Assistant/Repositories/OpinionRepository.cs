@@ -17,5 +17,14 @@ namespace Lab_Assistant.Repositories
             DB.ExecuteCommand(sql);
             DB.CloseConnection();
         }
+
+
+        public static void DeleteOpinion(int id)
+        {
+            string sql = $"UPDATE Sample SET Opinion = null WHERE SampleId = {id}";
+            DB.OpenConnection();
+            DB.ExecuteCommand(sql);
+            DB.CloseConnection();
+        }
     }
 }
